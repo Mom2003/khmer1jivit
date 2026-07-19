@@ -1,0 +1,33 @@
+[project]
+name = "nassa"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Mom",email = "momveoun@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi (>=0.139.2,<0.140.0)",
+    "uvicorn (>=0.51.0,<0.52.0)"
+]
+
+[tool.poetry]
+packages = [{include = "nassa", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)",
+    "black (>=26.5.1,<27.0.0)",
+    "flake8 (>=7.3.0,<8.0.0)",
+    "mypy (>=2.3.0,<3.0.0)",
+    "httpx2 (>=2.7.0,<3.0.0)"
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
